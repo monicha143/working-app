@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title>Work App</title>
+</head>
+<body>
+
+<div class="bg-name">CHALAPATHI</div>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div id="menu" class="menu">
+    <a onclick="goPage('home')">Home</a>
+    <a onclick="goPage('work')">Work</a>
+    <a onclick="goPage('allowance')">Allowance</a>
+    <a onclick="goPage('salary')">Salary</a>
+    <a onclick="goPage('received')">Received</a>
+    <a onclick="goPage('admin')">Admin</a>
+</div>
+
+<!-- HOME -->
+<div id="home" class="page active">
+    <div class="card center">
+        <h2>Punch</h2>
+        <input id="code" placeholder="User ID">
+        <button onclick="punchIn()">Punch In</button>
+        <button onclick="punchOut()">Punch Out</button>
+    </div>
+</div>
+
+<!-- WORK -->
+<div id="work" class="page">
+    <div class="card">
+        <h2>Work Data</h2>
+        <table id="workTable"></table>
+    </div>
+</div>
+
+<!-- ALLOWANCE -->
+<div id="allowance" class="page">
+    <div class="card center">
+        <h2>Add Allowance</h2>
+        <input id="aType" placeholder="Type">
+        <input id="aAmount" type="number" placeholder="Amount">
+        <button onclick="addAllowance()">Add</button>
+    </div>
+</div>
+
+<!-- SALARY -->
+<div id="salary" class="page">
+    <div class="card">
+        <h2>Salary List</h2>
+        <table id="salaryTable"></table>
+    </div>
+</div>
+
+<!-- RECEIVED SALARY -->
+<div id="received" class="page">
+    <div class="card center">
+        <h2>Salary Received</h2>
+        <input id="rAmount" type="number" placeholder="Amount">
+        <button onclick="addReceived()">Add</button>
+    </div>
+
+    <div class="card">
+        <table id="receivedTable"></table>
+    </div>
+</div>
+
+<!-- ADMIN -->
+<div id="admin" class="page">
+    <div class="card center">
+        <h2>Admin</h2>
+        <input id="user" placeholder="Username">
+        <input id="pass" type="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+
+        <div id="adminPanel" style="display:none;">
+            <h3>Set Salary</h3>
+            <input id="monthly" type="number" placeholder="Monthly Salary">
+            <input id="otRate" type="number" placeholder="OT per Hour">
+            <button onclick="saveRates()">Save</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
